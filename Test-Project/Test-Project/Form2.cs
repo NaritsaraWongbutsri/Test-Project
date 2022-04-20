@@ -12,144 +12,46 @@ namespace Test_Project
 {
     public partial class Form2 : Form
     {
+        CurrencyConverter currencyConverter = new CurrencyConverter();
         public Form2()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-
-            comboBox1.Items.Add("บูรไน");
-            comboBox1.Items.Add("กัมพูชา");
-            comboBox1.Items.Add("อินโดนีเซีย");
-            comboBox1.Items.Add("ลาว");
-            comboBox1.Items.Add("มาเลเซีย");
-            comboBox1.Items.Add("พม่า");
-            comboBox1.Items.Add("ฟิลิปปินส์");
-            comboBox1.Items.Add("สิงคโปร์");
-            comboBox1.Items.Add("เวียดนาม");
-            comboBox1.Items.Add("ประเทศไทย");
-            comboBox2.Items.Add("บูรไน");
-            comboBox2.Items.Add("กัมพูชา");
-            comboBox2.Items.Add("อินโดนีเซีย");
-            comboBox2.Items.Add("ลาว");
-            comboBox2.Items.Add("มาเลเซีย");
-            comboBox2.Items.Add("พม่า");
-            comboBox2.Items.Add("ฟิลิปปินส์");
-            comboBox2.Items.Add("สิงคโปร์");
-            comboBox2.Items.Add("เวียดนาม");
-            comboBox2.Items.Add("ประเทศไทย");
-        }
-
-        private void buttonCalculate_Click(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked == true)
-            {
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("กรุณาเลือกประเทศ", "แจ้งเตือน");
-                }
-                else if (comboBox2.Text == "")
-                {
-                    MessageBox.Show("กรุณาเลือกประเทศ", "แจ้งเตือน");
-                }
-                else
-                {
-                    if (comboBox1.Text == "บูรไน")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 24.2271;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "กัมพูชา")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 0.8254;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "อินโดนีเซีย")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 2.1769;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "ลาว")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 0.2887;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "มาเลเซีย")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 7.8108;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "พม่า")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 0.0187;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "ฟิลิปปินส์")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 0.6228;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "สิงคโปร์")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 24.3376;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "เวียดนาม")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 0.1458;
-                        textBox11.Text = total.ToString();
-
-                    }
-                    else if (comboBox1.Text == "ไทย")
-                    {
-                        double total, m = double.Parse(textBox1.Text);
-                        total = (m / 2) * 1.0000;
-                        textBox11.Text = total.ToString();
-
-                    }
-                }
-
-
-            }
-        }
-
-        private void buttonCurrency_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 24.2271;
-                textBox2.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addBrunei(Ibath);
+
+                double brunei = currencyConverter.getBrunei();
+                textBox2.Text = brunei.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox1.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox2.Text;
             }
+
             else
             {
                 textBox2.Text = "";
             }
             if (checkBox2.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 0.8254;
-                textBox3.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addCambodia(Ibath);
+
+                double cambodia = currencyConverter.getCombodia();
+                textBox3.Text = cambodia.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox2.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox3.Text;
             }
             else
             {
@@ -157,9 +59,17 @@ namespace Test_Project
             }
             if (checkBox3.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 2.1769;
-                textBox4.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addIndonesia(Ibath);
+
+                double indonesia = currencyConverter.getIndonesia();
+                textBox4.Text = indonesia.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox3.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox4.Text;
             }
             else
             {
@@ -167,9 +77,17 @@ namespace Test_Project
             }
             if (checkBox4.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 0.2887;
-                textBox5.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addLaos(Ibath);
+
+                double laos = currencyConverter.getLaos();
+                textBox5.Text = laos.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox4.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox5.Text;
             }
             else
             {
@@ -177,19 +95,37 @@ namespace Test_Project
             }
             if (checkBox5.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 7.8108;
-                textBox6.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addMalaysia(Ibath);
+
+                double malaysia = currencyConverter.getMalaysia();
+                textBox6.Text = malaysia.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox5.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox6.Text;
             }
             else
             {
                 textBox6.Text = "";
             }
+
             if (checkBox6.Checked == true)
+
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 0.0187;
-                textBox7.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addMyanmar(Ibath);
+
+                double myanmar = currencyConverter.getMyanmar();
+                textBox7.Text = myanmar.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox6.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox7.Text;
             }
             else
             {
@@ -197,9 +133,17 @@ namespace Test_Project
             }
             if (checkBox7.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 0.6228;
-                textBox8.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addPhilippines(Ibath);
+
+                double philippines = currencyConverter.getPhilippines();
+                textBox8.Text = philippines.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox7.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox8.Text;
             }
             else
             {
@@ -207,25 +151,78 @@ namespace Test_Project
             }
             if (checkBox8.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 24.3376;
-                textBox9.Text = total.ToString();
-            }
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addSingapore(Ibath);
 
+                double singapore = currencyConverter.getSingapore();
+                textBox9.Text = singapore.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox8.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox9.Text;
+            }
             else
             {
                 textBox9.Text = "";
             }
             if (checkBox9.Checked == true)
             {
-                double total, m = double.Parse(textBox1.Text);
-                total = m * 0.1458;
-                textBox10.Text = total.ToString();
+                string bath = this.textBox1.Text;
+                double Ibath = Convert.ToDouble(bath);
+                currencyConverter.addVietnam(Ibath);
+
+                double vietnam = currencyConverter.getVietnam();
+                textBox10.Text = vietnam.ToString();
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
+                dataGridView1.Rows[n].Cells[1].Value = checkBox9.Text;
+                dataGridView1.Rows[n].Cells[2].Value = textBox10.Text;
             }
             else
             {
                 textBox10.Text = "";
             }
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "CSV(*.csv)|*csv";
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (!fileError)
+                    {
+                        try
+                        {
+                            int columnCount = dataGridView1.Columns.Count;
+                            string columnNames = "";
+                            string[] outputCSV = new string[dataGridView1.Rows.Count + 1];
+                            for (int i = 0; i < columnCount; i++)
+                            {
+                                columnNames += dataGridView1.Columns[i].HeaderText.ToString() + ",";
+                            }
+                            outputCSV[0] += columnNames;
+                            for (int i = 1; (i - 1) < dataGridView1.Rows.Count; i++)
+                            {
+                                for (int j = 0; j < columnCount; j++)
+                                { outputCSV[i] += dataGridView1.Rows[i - 1].Cells[j].Value.ToString() + ","; }
+                            }
+                            File.WriteAllLines(sfd.FileName, outputCSV, Encoding.UTF8);
+                        }
+                        catch (Exception ex)
+                        { 
+                            MessageBox.Show("Error :" + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
