@@ -20,6 +20,7 @@ namespace Test_Project
         private void Form2_Load(object sender, EventArgs e)
         {
 
+
             comboBox1.Items.Add("บูรไน");
             comboBox1.Items.Add("กัมพูชา");
             comboBox1.Items.Add("อินโดนีเซีย");
@@ -136,6 +137,8 @@ namespace Test_Project
         {
             if (checkBox1.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 24.2271;
                 textBox2.Text = total.ToString();
             }
             else
@@ -144,6 +147,8 @@ namespace Test_Project
             }
             if (checkBox2.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 0.8254;
                 textBox3.Text = total.ToString();
             }
             else
@@ -152,6 +157,8 @@ namespace Test_Project
             }
             if (checkBox3.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 2.1769;
                 textBox4.Text = total.ToString();
             }
             else
@@ -160,6 +167,8 @@ namespace Test_Project
             }
             if (checkBox4.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 0.2887;
                 textBox5.Text = total.ToString();
             }
             else
@@ -168,6 +177,8 @@ namespace Test_Project
             }
             if (checkBox5.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 7.8108;
                 textBox6.Text = total.ToString();
             }
             else
@@ -176,6 +187,8 @@ namespace Test_Project
             }
             if (checkBox6.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 0.0187;
                 textBox7.Text = total.ToString();
             }
             else
@@ -184,6 +197,8 @@ namespace Test_Project
             }
             if (checkBox7.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 0.6228;
                 textBox8.Text = total.ToString();
             }
             else
@@ -192,6 +207,8 @@ namespace Test_Project
             }
             if (checkBox8.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 24.3376;
                 textBox9.Text = total.ToString();
             }
 
@@ -201,6 +218,8 @@ namespace Test_Project
             }
             if (checkBox9.Checked == true)
             {
+                double total, m = double.Parse(textBox1.Text);
+                total = m * 0.1458;
                 textBox10.Text = total.ToString();
             }
             else

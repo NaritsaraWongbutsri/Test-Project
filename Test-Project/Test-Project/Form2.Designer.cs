@@ -129,6 +129,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1080,10 +1081,17 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opanToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // opanToolStripMenuItem
+            // 
+            this.opanToolStripMenuItem.Name = "opanToolStripMenuItem";
+            this.opanToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.opanToolStripMenuItem.Text = "Opan";
             // 
             // saveToolStripMenuItem
             // 
@@ -1224,6 +1232,7 @@
         private DataGridViewTextBoxColumn Column4;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem opanToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
     }
 }
